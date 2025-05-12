@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snuff Bio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Embed Do DC -->
+    <meta content="Chand !!" property="og:title" />
+    <meta content="Bio Site Of @chand.ios" property="og:description" />
+    <meta content="localhost" property="og:url" />
+    <meta content="https://i.postimg.cc/tTN5G6fH/573ee39a-8f3d-4abc-8189-fb6a64a883e0.jpg" property="og:image" />
+    <meta content="#000000" data-react-helmet="true" name="theme-color" />
+
+    <style>
+        /* General styles */
+  
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="SNUFF 6.mp4" type="video/mp4" />
+        </video>
+        <!-- Background Music -->
+        <audio id="bgMusic" loop>
+            <source src="SNUFF 6.mp4" type="audio/mpeg" />
+        </audio>
+    </div>
+
+    <!-- Content Section -->
+    <div class="caption">
+        <div class="card-container">
+            <div class="card">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="https://i.postimg.cc/dVGJFtq9/IMG-20250508-011552-865.webp" alt="Logo">
+                </div>
+                <!-- Name -->
+                <div class="nick">CHAND !!</div>
+                <!-- Links -->
+                <div class="icon-links">
+                	<a href="https://discord.gg/QnsfZE9PJS" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="https://t.me/ChandSolds" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.reddit.com/u/chandsolds" target="_blank"><i class="fab fa-reddit"></i></a>
+                    <a href="https://www.instagram.com/chand.ios" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- Song Card -->
+                <div class="song-card">
+                    <div class="song-cover">
+                        <img src="https://i.postimg.cc/tTN5G6fH/573ee39a-8f3d-4abc-8189-fb6a64a883e0.jpg" alt="Okładka">
+                    </div>
+                    <div class="song-info">
+                        <div class="song-title">چاند</div>
+                        <div class="song-author">Sells & Service</div>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Control Button -->
+    <div class="audio-control" id="audioControl">
+        <div class="audio-icon" id="audioIcon"><i class="fas fa-volume-mute"></i></div>
+        <div class="audio-text" id="audioText">Tap To Play Music</div>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        const audioControl = document.getElementById('audioControl');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
+
+        let isPlaying = true;
+
+        // Function to toggle audio play/pause
+        function toggleAudio() {
+            if (isPlaying) {
+                bgMusic.pause();
+                audioIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                bgMusic.play();
+                audioIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Function to animate text
+        function animateText() {
+            audioText.classList.add('active');
+            setTimeout(() => {
+                audioText.classList.remove('active');
+            }, 1000);
+
+            // Repeat animation every 5 seconds
+            setTimeout(animateText, 5000);
+        }
+
+        // Initial call to animate text
+        animateText();
+
+        // Add click event listener to toggle audio
+        audioControl.addEventListener('click', toggleAudio);
+    </script>
+</body>
+</html>
